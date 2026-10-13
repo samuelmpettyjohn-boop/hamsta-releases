@@ -18,7 +18,7 @@ Every Hamsta server is run by its host on their own computer. The host can acces
 ## What is stored on your server
 - Your account: your username, profile photo, the date you joined, whether you're the host, and a one-way hash of your login code (not the code itself).
 - Whether you have Hamsta+, and until when.
-- Your profile banner, profile color and "About me", if you've set them.
+- Your Hamsta+ profile extras, if you've set them: banner, animated photo, name colors, profile theme, avatar decoration and "About me".
 - When you agreed to the Terms of Use and this Privacy Policy: which version and the time.
 - Your friends list, friend requests, and the DMs and group chats you're in, including group names and photos.
 - The servers you create or join: their names, members and channels.
@@ -42,7 +42,7 @@ These are not end-to-end encrypted, so the host can read them.
 
 ## Who can see what
 - Everyone on your server can see your username, profile photo, whether you're online and which call you're in.
-- While you have Hamsta+, everyone on your server can also see your profile banner, profile color, "About me" and H+ badge.
+- While you have Hamsta+, everyone on your server can also see your Hamsta+ profile extras and H+ badge.
 - Messages in a server's channels can be seen by that server's members, and messages in DMs and group chats by their members. The host can also access all of them through the server's storage.
 - People in a call can hear you, and can see your camera and screen share when you turn them on.
 - Your block list is only shown to you. The host can also access it through the server's storage.
