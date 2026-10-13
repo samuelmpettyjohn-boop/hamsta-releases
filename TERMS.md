@@ -55,7 +55,9 @@ Remote control only starts after the person sharing their screen agrees, and the
 Hamsta+ is an optional paid tier. You don't need it to use Hamsta. It adds:
 - screen sharing in 1080p, 1440p or source quality (without Hamsta+, screen shares go up to 720p at 60 fps);
 - bigger uploads, up to your server's limit (2 GB by default; without Hamsta+ the limit is 300 MB per file);
-- profile customization: a profile banner, a profile color that also colors your name, an "About me" and an H+ badge.
+- profile customization: an animated profile photo and banner, name colors and gradients, a profile theme, avatar decorations, an "About me" and an H+ badge;
+- studio voice quality and voice effects;
+- longer messages, bigger group chats and no member limit on servers you own.
 
 Right now Hamsta+ can't be bought. The developer or the host of your server can give it to you at no charge for a week, a month or for life, and can remove it. When payments become available, the prices, billing, renewals and refunds will be shown in separate terms before you pay anything.
 
