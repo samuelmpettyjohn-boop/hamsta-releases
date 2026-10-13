@@ -75,4 +75,4 @@ Hamsta only connects to the Hamsta server you join. Updates come from that serve
 We may update this policy. If the changes are important, the app will ask you to agree again before you continue.
 
 ## Contact
-Questions about your privacy: open an issue at https://github.com/samuelmpettyjohn-boop/hamsta-releases/issues
+Questions about your privacy or a request about your data: email support@hamsta.tv
