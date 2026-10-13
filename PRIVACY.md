@@ -4,7 +4,7 @@ Effective October 12, 2026
 
 Last updated October 12, 2026
 
-This policy explains what the Hamsta app and the HampterTV clip app (the "software", made by Samuel M Pettyjohn, "the developer", "we") collect, where it goes and what you can do about it.
+This policy explains what the Hamsta™ app and the HamstaTV™ clip app (the "software", made by Samuel M Pettyjohn, "the developer", "we") collect, where it goes and what you can do about it.
 
 ## The short version
 - No ads, no analytics, no tracking, and we don't sell your data.
@@ -37,7 +37,7 @@ These are not end-to-end encrypted, so the host can read them.
 - Your login code, encrypted by Windows for your user account.
 - Your settings, such as devices, volumes and layout.
 - Files you download, saved where you choose.
-- HampterTV (optional) saves your clips on your computer. They stay there unless you share them.
+- HamstaTV (optional) saves your clips on your computer. They stay there unless you share them.
 
 ## Who can see what
 - Everyone on your server can see your username, profile photo, whether you're online and which call you're in.
