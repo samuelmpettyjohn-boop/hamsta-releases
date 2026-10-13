@@ -4,7 +4,7 @@ Effective October 12, 2026
 
 Last updated October 12, 2026
 
-These terms are an agreement between you and Samuel M Pettyjohn ("the developer", "we"), who makes the Hamsta app and the HampterTV clip app ("the software"). By creating an account or using the software, you agree to these terms and to the Hamsta Privacy Policy. If you don't agree, don't use the software.
+These terms are an agreement between you and Samuel M Pettyjohn ("the developer", "we"), who makes the Hamsta™ app and the HamstaTV™ clip app ("the software"). By creating an account or using the software, you agree to these terms and to the Hamsta Privacy Policy. If you don't agree, don't use the software.
 
 ## Who can use Hamsta
 - You must be at least 13 years old, or older if the law where you live requires it (for example, 16 in some EU countries).
@@ -59,11 +59,14 @@ Right now Hamsta+ can't be bought. The developer or the host of your server can 
 
 Hamsta+ features can change over time. Hamsta+ can be removed if you break these terms. Your profile customization is only shown while you have Hamsta+, but it stays saved.
 
+## Trademarks
+Hamsta™ and HamstaTV™, and their names and logos, are trademarks of Samuel M Pettyjohn. These terms don't give you any right to use them, except to refer to the software.
+
 ## Updates
 The software updates itself. Updates are signed by the developer, and the app only installs updates with a valid signature. Old versions may stop working with newer servers.
 
 ## Open-source software
-Hamsta and HampterTV include open-source software that is covered by its own licenses. Those licenses apply to those parts of the software, and nothing in these terms limits your rights under them. You can read the notices in the app (Settings, Terms & Privacy, Third-party licenses) and in the download.
+Hamsta and HamstaTV include open-source software that is covered by its own licenses. Those licenses apply to those parts of the software, and nothing in these terms limits your rights under them. You can read the notices in the app (Settings, Terms & Privacy, Third-party licenses) and in the download.
 
 ## No warranty
 The software is provided "as is" and "as available", without warranties of any kind, express or implied, including warranties of merchantability, fitness for a particular purpose and non-infringement. We don't promise that it will always be available, secure or free of errors, or that data won't be lost. Keep your own copies of anything important.
