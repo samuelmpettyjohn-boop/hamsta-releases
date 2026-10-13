@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hamsta™: voice, video and chat for you and your friends</title>
+<meta name="description" content="Hamsta is a private voice, video, screen share and chat app for you and your friends, on a server you run yourself.">
+<meta property="og:title" content="Hamsta™">
+<meta property="og:description" content="Private voice, video, screen share and chat for you and your friends, on a server you run yourself.">
+<meta property="og:image" content="https://hamsta.tv/icon.png">
+<meta name="theme-color" content="#7b6cf6">
+<link rel="icon" href="icon.png">
+<style>
+  :root { --bg0: #0e0f11; --bg1: #16171a; --bg2: #1d1e22; --line: #2a2b31; --text: #e8e9ec; --text2: #b5b7bd; --muted: #8a8d96; --accent: #7b6cf6; --accent2: #9587ff; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; background: var(--bg0); color: var(--text); font: 16px/1.55 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  a { color: var(--accent2); }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
+  header { display: flex; align-items: center; gap: 10px; padding: 22px 0; font-weight: 700; font-size: 20px; }
+  header img { width: 36px; height: 36px; }
+  header nav { margin-left: auto; display: flex; gap: 18px; font-size: 15px; font-weight: 600; }
+  header nav a { color: var(--text2); text-decoration: none; }
+  header nav a:hover { color: var(--text); }
+  .hero { text-align: center; padding: 56px 0 40px; }
+  .hero img { width: 112px; height: 112px; filter: drop-shadow(0 10px 30px #7b6cf655); }
+  h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.1; margin: 18px 0 14px; letter-spacing: -0.02em; }
+  .lead { font-size: clamp(17px, 2.4vw, 20px); color: var(--text2); max-width: 640px; margin: 0 auto 30px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; padding: 14px 26px; border-radius: 999px; font-size: 17px; }
+  .btn:hover { background: var(--accent2); }
+  .btn svg { width: 20px; height: 20px; }
+  .small { font-size: 14px; color: var(--muted); margin-top: 12px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; padding: 30px 0; }
+  .card { background: var(--bg1); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
+  .card h3 { margin: 0 0 6px; font-size: 17px; }
+  .card p { margin: 0; color: var(--text2); font-size: 15px; }
+  section h2 { font-size: 26px; margin: 40px 0 6px; }
+  section > p { color: var(--text2); margin: 0 0 8px; }
+  ol { color: var(--text2); padding-left: 22px; }
+  ol li { margin-bottom: 6px; }
+  .tv { display: flex; gap: 22px; align-items: center; background: var(--bg1); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin-top: 14px; }
+  .tv b { color: var(--text); }
+  .tv .badge { flex: none; font-weight: 800; font-size: 22px; background: var(--bg2); border-radius: 12px; padding: 14px 16px; }
+  .tv .badge span { color: var(--accent2); }
+  footer { border-top: 1px solid var(--line); margin-top: 60px; padding: 26px 0 40px; color: var(--muted); font-size: 14px; }
+  footer .links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 10px; }
+  footer .links a { color: var(--text2); }
+  @media (max-width: 560px) { header nav { display: none; } .tv { flex-direction: column; align-items: flex-start; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header><img src="icon.png" alt="">Hamsta&trade;
+    <nav><a href="#features">Features</a><a href="#hamstatv">HamstaTV</a><a href="#join">How to join</a></nav>
+  </header>
+
+  <div class="hero">
+    <img src="icon.png" alt="Hamsta">
+    <h1>Hang out with your friends.<br>On your own server.</h1>
+    <p class="lead">Hamsta is voice, video, screen sharing and chat for you and your friends. Your group's host runs the server, so your chats live there, not in some company's cloud. No ads, no tracking.</p>
+    <a class="btn" href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/releases/latest">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+      Download for Windows</a>
+    <div class="small">Windows 10 and 11. One portable app, and it updates itself.</div>
+  </div>
+
+  <section id="features">
+    <div class="grid">
+      <div class="card"><h3>Crystal-clear voice</h3><p>Voice channels and calls with AI noise suppression, push-to-talk that works in any game, and per-person volume.</p></div>
+      <div class="card"><h3>Screen share that keeps up</h3><p>Share a game or your whole screen with sound, smooth at 60 fps. Hamsta+ goes up to 1440p and source quality.</p></div>
+      <div class="card"><h3>Webcams</h3><p>Turn your camera on in any call. Sharing your screen too? Your camera sits in the corner.</p></div>
+      <div class="card"><h3>DMs and group chats</h3><p>Message friends, make group chats with their own name and photo, and call them with one button.</p></div>
+      <div class="card"><h3>Files, links and videos</h3><p>Send big files, and links show previews. YouTube videos play right in the chat.</p></div>
+      <div class="card"><h3>Hop on someone's wheel</h3><p>Ask to take control of a friend's mouse and keyboard while they share, only if they say yes.</p></div>
+    </div>
+  </section>
+
+  <section id="hamstatv">
+    <h2>HamstaTV&trade;</h2>
+    <p>Clip saving and trimming for your games, made to go with Hamsta.</p>
+    <div class="tv"><div class="badge">Hamsta<span>TV</span></div>
+      <div>Press your save key and HamstaTV keeps just the moment you want. Turn it on in Hamsta under <b>Settings, Hamsta Clipper</b>, and Hamsta installs it and keeps it updated for you.</div></div>
+  </section>
+
+  <section id="join">
+    <h2>How to join</h2>
+    <ol>
+      <li>Download Hamsta and open it.</li>
+      <li>Paste the one-time join link your server's host sent you, and pick a username.</li>
+      <li>Save your login code somewhere safe: it's how you sign in again.</li>
+    </ol>
+    <p>Every update is signed by the developer, and Hamsta checks the signature before installing anything.</p>
+  </section>
+
+  <footer>
+    <div class="links">
+      <a href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/blob/main/TERMS.md">Terms of Use</a>
+      <a href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/blob/main/PRIVACY.md">Privacy Policy</a>
+      <a href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/blob/main/SECURITY.md">Report a security problem</a>
+      <a href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/releases">All releases</a>
+    </div>
+    <div>You must be 13 or older, or older if the law where you live requires it.</div>
+    <div>Hamsta&trade; and HamstaTV&trade; are trademarks of Samuel M Pettyjohn.</div>
+  </footer>
+</div>
+</body>
+</html>
