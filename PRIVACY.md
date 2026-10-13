@@ -21,6 +21,7 @@ Every Hamsta server is run by its host on their own computer. The host can acces
 - Your profile banner, profile color and "About me", if you've set them.
 - When you agreed to the Terms of Use and this Privacy Policy: which version and the time.
 - Your friends list, friend requests, and the DMs and group chats you're in, including group names and photos.
+- The servers you create or join: their names, members and channels.
 - Your block list: the people you've blocked.
 - The messages you send in channels, DMs and group chats.
 - The files you upload, with their names and sizes.
@@ -42,7 +43,7 @@ These are not end-to-end encrypted, so the host can read them.
 ## Who can see what
 - Everyone on your server can see your username, profile photo, whether you're online and which call you're in.
 - While you have Hamsta+, everyone on your server can also see your profile banner, profile color, "About me" and H+ badge.
-- Messages in a server's channels can be seen by everyone on that server. DMs and group chats can be seen by their members, and by the host, who can access the server's storage.
+- Messages in a server's channels can be seen by that server's members, and messages in DMs and group chats by their members. The host can also access all of them through the server's storage.
 - People in a call can hear you, and can see your camera and screen share when you turn them on.
 - Your block list is only shown to you. The host can also access it through the server's storage.
 - Reports are only seen by the host of your server.
@@ -53,7 +54,7 @@ Connections to your server are encrypted (TLS 1.3) and locked to that server's c
 ## Keeping and deleting data
 - Data stays on your server until it's deleted.
 - When you delete a message, it's removed from the server along with its files.
-- You can delete your account yourself in Settings, My Account, Delete account. It removes your account, every message you sent, the files you uploaded and your DMs from that server, and removes you from your group chats. It can't be undone. The host's own account can't be deleted this way.
+- You can delete your account yourself in Settings, My Account, Delete account. It removes your account, every message you sent, the files you uploaded, your DMs and the servers you own (with their channels and messages) from that server, and removes you from your group chats and other servers. It can't be undone. The host's own account can't be deleted this way.
 - Group chats keep the messages other people sent in them.
 - If someone reported you or one of your messages, the copy saved in that report is kept for the host to review, even after the message or your account is deleted.
 - Deleting your account doesn't clear the server's activity log, which the host controls.
