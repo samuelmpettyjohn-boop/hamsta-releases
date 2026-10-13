@@ -14,7 +14,7 @@ Please **don't open a public issue** for security problems. A private report giv
 
 ## What to include
 
-- The version you tested (Hamsta, HampterTV or the server)
+- The version you tested (Hamsta, HamstaTV or the server)
 - Steps to reproduce the problem
 - What an attacker could do with it (the impact)
 - Screenshots, logs or a proof of concept if you have them
@@ -25,7 +25,7 @@ In scope:
 
 - The Hamsta app
 - The Hamsta server
-- HampterTV
+- HamstaTV
 - The update and release-signing system
 
 Out of scope:
