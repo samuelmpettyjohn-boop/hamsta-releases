@@ -58,6 +58,7 @@ Hamsta+ is an optional paid tier. You don't need it to use Hamsta. It adds:
 - profile customization: an animated profile photo and banner, name colors and gradients, a profile theme, avatar decorations, an "About me" and an H+ badge;
 - studio voice quality and voice effects;
 - your own custom emoji and stickers;
+- HamstaTV clips up to 5 minutes at up to 4K 240 fps (without Hamsta+: up to 2 minutes at 720p 60 fps), 15 GB of clip storage (without Hamsta+: 2 GB) and a clip showcase on your profile;
 - boosting a server (an animated server icon, a server banner and better voice in its calls);
 - longer messages, bigger group chats and no member limit on servers you own.
 
