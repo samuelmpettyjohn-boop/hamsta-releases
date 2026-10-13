@@ -10,6 +10,6 @@ Every release comes with a `latest.json` that includes a signature. Hamsta check
 
 You must be 13 or older, or older if the law where you live requires it. Using Hamsta means you agree to the [Terms of Use](TERMS.md) and the [Privacy Policy](PRIVACY.md).
 
-Found a security problem? Please report it privately: see [SECURITY.md](SECURITY.md).
+Questions or requests: email support@hamsta.tv. Found a security problem? Please report it privately: see [SECURITY.md](SECURITY.md).
 
 Hamsta™ and HamstaTV™ are trademarks of Samuel M Pettyjohn.
