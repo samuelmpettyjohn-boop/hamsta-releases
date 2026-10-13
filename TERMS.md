@@ -57,6 +57,8 @@ Hamsta+ is an optional paid tier. You don't need it to use Hamsta. It adds:
 - bigger uploads, up to your server's limit (2 GB by default; without Hamsta+ the limit is 300 MB per file);
 - profile customization: an animated profile photo and banner, name colors and gradients, a profile theme, avatar decorations, an "About me" and an H+ badge;
 - studio voice quality and voice effects;
+- your own custom emoji and stickers;
+- boosting a server (an animated server icon, a server banner and better voice in its calls);
 - longer messages, bigger group chats and no member limit on servers you own.
 
 Right now Hamsta+ can't be bought. The developer or the host of your server can give it to you at no charge for a week, a month or for life, and can remove it. When payments become available, the prices, billing, renewals and refunds will be shown in separate terms before you pay anything.
