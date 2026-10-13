@@ -81,4 +81,4 @@ You can stop using Hamsta at any time. You can delete your account yourself in S
 We may update these terms. If we make important changes, the app will ask you to agree again before you continue.
 
 ## Contact
-Questions about these terms: open an issue at https://github.com/samuelmpettyjohn-boop/hamsta-releases/issues
+Questions about these terms, or legal requests about the software: email support@hamsta.tv
