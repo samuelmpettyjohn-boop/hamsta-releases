@@ -10,6 +10,8 @@ Please report security problems **privately**:
 2. Open the **Security** tab.
 3. Click **Report a vulnerability**.
 
+Or email **support@hamsta.tv** with "Security" in the subject.
+
 Please **don't open a public issue** for security problems. A private report gives me time to ship a fix before the details are public.
 
 ## What to include
