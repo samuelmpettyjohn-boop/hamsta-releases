@@ -21,7 +21,8 @@ Every Hamsta server is run by its host on their own computer. The host can acces
 - Your Hamsta+ profile extras, if you've set them: banner, animated photo, name colors, profile theme, avatar decoration and "About me".
 - When you agreed to the Terms of Use and this Privacy Policy: which version and the time.
 - Your friends list, friend requests, and the DMs and group chats you're in, including group names and photos.
-- The servers you create or join: their names, members and channels.
+- The servers you create or join: their names, members, channels, icons and banners, and who boosts them.
+- The custom emoji and stickers you upload, with their names.
 - Your block list: the people you've blocked.
 - The messages you send in channels, DMs and group chats.
 - The files you upload, with their names and sizes.
