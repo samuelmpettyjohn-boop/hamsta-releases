@@ -54,13 +54,15 @@ Remote control only starts after the person sharing their screen agrees, and the
 ## Hamsta+
 Hamsta+ is an optional paid tier. You don't need it to use Hamsta. It adds:
 - screen sharing in 1080p, 1440p or source quality (without Hamsta+, screen shares go up to 720p at 60 fps);
-- bigger uploads, up to your server's limit (2 GB by default; without Hamsta+ the limit is 300 MB per file);
+- bigger uploads, up to your server's limit (2 GB by default; without Hamsta+ the limit is 300 MB per file), kept longer (see below);
 - profile customization: an animated profile photo and banner, name colors and gradients, a profile theme, avatar decorations, an "About me" and an H+ badge;
 - studio voice quality and voice effects;
 - your own custom emoji and stickers;
-- HamstaTV clips up to 5 minutes at up to 4K 240 fps (without Hamsta+: up to 2 minutes at 720p 60 fps), 15 GB of clip storage (without Hamsta+: 2 GB) and a clip showcase on your profile;
+- HamstaTV clips up to 5 minutes at up to 4K 240 fps (without Hamsta+: up to 2 minutes at 720p 60 fps), 15 GB of clip storage (without Hamsta+: 2 GB) and up to 4 clips of up to 2 minutes on your profile (without Hamsta+: 1 clip of up to 45 seconds);
 - boosting a server (an animated server icon, a server banner and better voice in its calls);
 - longer messages, bigger group chats and no member limit on servers you own.
+
+Big files are deleted automatically: without Hamsta+, files over 30 MB are deleted 48 hours after you upload them; with Hamsta+, files over 250 MB are deleted after 7 days. This goes by whether you have Hamsta+ at the time. HamstaTV clips, profile pictures, emoji and server icons aren't deleted this way. Keep your own copy of anything you want to keep.
 
 Right now Hamsta+ can't be bought. The developer or the host of your server can give it to you at no charge for a week, a month or for life, and can remove it. When payments become available, the prices, billing, renewals and refunds will be shown in separate terms before you pay anything.
 
