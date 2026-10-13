@@ -65,8 +65,11 @@ You can download your data from your server in Settings, My Account, Download my
 ## Children
 Hamsta isn't for children under 13, or under the higher minimum age in their country (for example, 16 in some EU countries), and we don't knowingly collect information from them. If you're a parent or guardian and think your child is under that age and has an account, ask the server's host to remove it, or contact us below.
 
+## Link previews
+When a message has a link, your server visits that page to show a preview (its title, description and picture) and passes the picture on to you. The linked site sees your server's IP address, not yours. Previews are only kept in the server's memory for a few hours and aren't saved. You can turn previews off in Settings, Chat.
+
 ## Connections the app makes
-Hamsta only connects to the Hamsta server you join. Updates come from that server too. It doesn't send your data anywhere else.
+Hamsta only connects to the Hamsta server you join. Updates come from that server too. It doesn't send your data anywhere else. The one exception: when you press play on a YouTube video in a chat, the video loads from YouTube (youtube-nocookie.com), which then sees your IP address and is covered by Google's privacy policy.
 
 ## Changes
 We may update this policy. If the changes are important, the app will ask you to agree again before you continue.
