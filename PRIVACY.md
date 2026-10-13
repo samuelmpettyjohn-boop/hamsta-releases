@@ -18,14 +18,14 @@ Every Hamsta server is run by its host on their own computer. The host can acces
 ## What is stored on your server
 - Your account: your username, profile photo, the date you joined, whether you're the host, and a one-way hash of your login code (not the code itself).
 - Whether you have Hamsta+, and until when.
-- Your Hamsta+ profile extras, if you've set them: banner, animated photo, name colors, profile theme, avatar decoration and "About me".
+- Your Hamsta+ profile extras, if you've set them: banner, animated photo, name colors, profile theme, avatar decoration, clip showcase and "About me".
 - When you agreed to the Terms of Use and this Privacy Policy: which version and the time.
 - Your friends list, friend requests, and the DMs and group chats you're in, including group names and photos.
 - The servers you create or join: their names, members, channels, icons and banners, and who boosts them.
 - The custom emoji and stickers you upload, with their names.
 - Your block list: the people you've blocked.
 - The messages you send in channels, DMs and group chats.
-- The files you upload, with their names and sizes.
+- The files you upload, with their names and sizes, and whether a video is a HamstaTV clip.
 - Reports: when someone reports a user or a message, the report stores who reported, who was reported, the reason given, and a copy of the reported message (its text and the names of its files), so the host can review it even if the message is deleted.
 - Your username and the IP address you connect from, in the server's activity log.
 
@@ -39,7 +39,7 @@ These are not end-to-end encrypted, so the host can read them.
 - Your login code, encrypted by Windows for your user account.
 - Your settings, such as devices, volumes and layout.
 - Files you download, saved where you choose.
-- HamstaTV (optional) saves your clips on your computer. They stay there unless you share them.
+- HamstaTV (optional) saves your clips on your computer. They stay there unless you share them. Hamsta tells HamstaTV whether you have Hamsta+ (for its clip limits) through a small file on your computer.
 
 ## Who can see what
 - Everyone on your server can see your username, profile photo, whether you're online and which call you're in.
