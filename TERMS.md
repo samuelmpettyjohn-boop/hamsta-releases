@@ -14,6 +14,8 @@ These terms are an agreement between you and Samuel M Pettyjohn ("the developer"
 ## How Hamsta works
 Hamsta is software. Each Hamsta server is run by its host, the person who set the server up and sends out join links, not by the developer (unless the developer is the host of the server you join). The host controls their server: who can join, which channels exist, and the accounts, messages and files stored on it. Hosts can remove accounts and content at any time.
 
+Inside Hamsta, anyone can create a server. Its owner decides who's in it, manages its channels and can remove people, delete messages in it or delete the whole server at any time.
+
 ## Your account
 - When you sign up, you get a login code. It's the key to your account. Keep it private and keep a copy somewhere safe: anyone who has it can sign in as you.
 - If you lose your login code, only the host of your server can give you a new one.
