@@ -55,6 +55,7 @@ Connections to your server are encrypted (TLS 1.3) and locked to that server's c
 ## Keeping and deleting data
 - Data stays on your server until it's deleted.
 - When you delete a message, it's removed from the server along with its files.
+- Big files are deleted automatically: without Hamsta+, files over 30 MB after 48 hours; with Hamsta+, files over 250 MB after 7 days. HamstaTV clips aren't deleted this way. The message stays and shows that the file expired.
 - You can delete your account yourself in Settings, My Account, Delete account. It removes your account, every message you sent, the files you uploaded, your DMs and the servers you own (with their channels and messages) from that server, and removes you from your group chats and other servers. It can't be undone. The host's own account can't be deleted this way.
 - Group chats keep the messages other people sent in them.
 - If someone reported you or one of your messages, the copy saved in that report is kept for the host to review, even after the message or your account is deleted.
