@@ -8,123 +8,222 @@
 <meta property="og:title" content="Hamsta™">
 <meta property="og:description" content="Private voice, video, screen share and chat for you and your friends, with servers, DMs and group chats. On the desktop or in your browser.">
 <meta property="og:image" content="https://hamsta.tv/icon.png">
-<meta name="theme-color" content="#7b6cf6">
+<meta name="theme-color" content="#ffffff">
+<meta name="color-scheme" content="light">
 <link rel="icon" href="icon.png">
+<link rel="preload" href="fonts/shantell-sans-normal.woff2" as="font" type="font/woff2" crossorigin>
 <style>
-  :root { --bg0: #0e0f11; --bg1: #16171a; --bg2: #1d1e22; --line: #2a2b31; --text: #e8e9ec; --text2: #b5b7bd; --muted: #8a8d96; --accent: #7b6cf6; --accent2: #9587ff; --gold: #f0b232; }
+  /* Fonts live on hamsta.tv itself, so loading the page never pings Google. */
+  @font-face { font-family: "Shantell Sans"; font-weight: 400 800; font-display: swap; src: url(fonts/shantell-sans-normal.woff2) format("woff2"); }
+  @font-face { font-family: "Onest"; font-weight: 400 700; font-display: swap; src: url(fonts/onest.woff2) format("woff2"); }
+
+  /* Everything comes from the logo: white paper, black marker, the beanie's stripes. */
+  :root {
+    --paper: #ffffff;
+    --ink: #000000;
+    --pencil: #55575f;
+    --blue: #1fa2ff;
+    --pink: #ff4fa3;
+    --orange: #ff8a1f;
+    --yellow: #ffd60a;
+    --plus: linear-gradient(135deg, #ff7ac6, #7b6cf6); /* the app's H+ badge */
+    --marker: "Shantell Sans", "Segoe Print", "Comic Sans MS", cursive;
+    --body: "Onest", "Segoe UI", system-ui, sans-serif;
+  }
   * { box-sizing: border-box; }
-  html, body { margin: 0; background: var(--bg0); color: var(--text); font: 16px/1.55 "Segoe UI", system-ui, -apple-system, sans-serif; }
   html { scroll-behavior: smooth; }
-  a { color: var(--accent2); }
-  .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
-  header { display: flex; align-items: center; gap: 10px; padding: 22px 0; font-weight: 700; font-size: 20px; }
-  header img { width: 36px; height: 36px; }
-  header nav { margin-left: auto; display: flex; gap: 18px; font-size: 15px; font-weight: 600; }
-  header nav a { color: var(--text2); text-decoration: none; }
-  header nav a:hover { color: var(--text); }
-  .hero { text-align: center; padding: 56px 0 40px; }
-  .hero img { width: 112px; height: 112px; filter: drop-shadow(0 10px 30px #7b6cf655); }
-  h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.1; margin: 18px 0 14px; letter-spacing: -0.02em; }
-  .lead { font-size: clamp(17px, 2.4vw, 20px); color: var(--text2); max-width: 660px; margin: 0 auto 30px; }
-  .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; padding: 14px 26px; border-radius: 999px; font-size: 17px; }
-  .btn:hover { background: var(--accent2); }
-  .btn svg { width: 20px; height: 20px; }
-  .btn.alt { background: none; color: var(--text); border: 1px solid var(--line); padding: 10px 22px; font-size: 15px; margin-top: 12px; }
-  .btn.alt:hover { background: var(--bg2); }
-  .small { font-size: 14px; color: var(--muted); margin-top: 12px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; padding: 18px 0 0; }
-  .grid.four { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
-  .card { background: var(--bg1); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
-  .card h3 { margin: 0 0 6px; font-size: 17px; }
-  .card p { margin: 0; color: var(--text2); font-size: 15px; }
-  section h2 { font-size: 26px; margin: 56px 0 6px; }
-  section > p { color: var(--text2); margin: 0 0 8px; max-width: 720px; }
-  ol { color: var(--text2); padding-left: 22px; }
-  ol li { margin-bottom: 6px; }
-  .plus-badge { display: inline-block; font-size: 13px; font-weight: 800; color: #1b1405; background: var(--gold); border-radius: 6px; padding: 1px 7px; margin-left: 6px; vertical-align: 4px; }
-  .plus .card { border-color: #f0b23233; }
-  .note { color: var(--muted); font-size: 14px; margin-top: 14px; }
-  .tv { display: flex; gap: 22px; align-items: center; background: var(--bg1); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin-top: 14px; }
-  .tv b { color: var(--text); }
-  .tv p { margin: 0 0 8px; color: var(--text2); }
-  .tv p:last-child { margin-bottom: 0; }
-  .tv .badge { flex: none; font-weight: 800; font-size: 22px; background: var(--bg2); border-radius: 12px; padding: 14px 16px; }
-  .tv .badge span { color: var(--accent2); }
-  footer { border-top: 1px solid var(--line); margin-top: 60px; padding: 26px 0 40px; color: var(--muted); font-size: 14px; }
-  footer .links { display: flex; flex-wrap: wrap; gap: 18px; margin-bottom: 10px; }
-  footer .links a { color: var(--text2); }
-  @media (max-width: 560px) { header nav { display: none; } .tv { flex-direction: column; align-items: flex-start; } }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: 18px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
+  a { color: inherit; text-underline-offset: 3px; }
+  a:focus-visible, .btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  h1, h2, h3, .brand, .btn { font-family: var(--marker); font-variation-settings: "INFM" 60; }
+  .tm { font: 600 .42em/1 var(--body); vertical-align: .9em; margin-left: .05em; }
+
+  header { display: flex; align-items: center; gap: 12px; padding: 22px 0; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 24px; text-decoration: none; }
+  .brand img { width: 44px; height: 44px; }
+  header nav { margin-left: auto; display: flex; gap: 26px; font-size: 16px; }
+  header nav a { color: var(--pencil); text-decoration: none; }
+  header nav a:hover { color: var(--ink); text-decoration: underline; }
+
+  /* Hero: the hamster sits on a hand-drawn floor line. */
+  .hero { display: grid; grid-template-columns: 1.1fr .9fr; align-items: end; gap: 24px; padding-top: 40px; }
+  .hero-text { padding-bottom: 72px; }
+  h1 { font-size: clamp(48px, 7.4vw, 92px); line-height: .98; font-weight: 800; margin: 0 0 24px; letter-spacing: -.01em; }
+  .lead { font-size: 21px; color: var(--pencil); max-width: 30em; margin: 0 0 32px; }
+  .ctas { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 20px; line-height: 1;
+    padding: 17px 28px; border: 3px solid var(--ink); border-radius: 22px 9px 19px 11px / 11px 19px 9px 22px; }
+  .btn svg { width: 22px; height: 22px; flex: none; }
+  .btn.main { background: var(--ink); color: var(--paper); }
+  .btn.main:hover { background: #2b2b2b; }
+  .btn.alt { background: var(--paper); color: var(--ink); font-size: 17px; padding: 12px 22px; }
+  .btn.alt:hover { background: #f2f2f2; }
+  .fine { font-size: 15px; color: var(--pencil); margin: 16px 0 0; }
+  .hamster { display: flex; justify-content: center; }
+  .hamster img { display: block; width: 100%; max-width: 480px; height: auto; margin-bottom: -4px; transform-origin: 50% 100%; animation: boil .9s steps(1) infinite; }
+  /* "line boil": the tiny jitter of hand-drawn animation */
+  @keyframes boil { 0% { transform: none; } 33% { transform: rotate(-.5deg) translateX(1px); } 66% { transform: rotate(.4deg) translate(-1px, 1px); } }
+  @media (prefers-reduced-motion: reduce) { .hamster img { animation: none; } html { scroll-behavior: auto; } }
+  .floor { display: block; width: 100%; height: 18px; }
+  .floor path { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; vector-effect: non-scaling-stroke; }
+
+  section { padding: 84px 0 0; }
+  h2 { font-size: clamp(34px, 4.6vw, 48px); line-height: 1.05; font-weight: 800; margin: 0 0 10px; }
+  .intro { color: var(--pencil); margin: 0 0 40px; max-width: 34em; }
+
+  /* Features in four groups, each marked with a beanie color. */
+  .groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 64px; }
+  h3 { position: relative; display: inline-block; font-size: 30px; font-weight: 700; margin: 0 0 14px; padding: 0 4px; z-index: 0; }
+  h3::before { content: ""; position: absolute; inset: 48% -6px 2% -4px; z-index: -1; background: var(--hl); opacity: .55;
+    border-radius: 4px 14px 6px 16px / 9px 4px 11px 6px; transform: rotate(-1.4deg); }
+  .talk { --hl: var(--blue); } .chat { --hl: var(--pink); } .play { --hl: var(--orange); } .yours { --hl: var(--yellow); }
+  .items { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+  .items b { display: block; font-size: 18px; }
+  .items span { color: var(--pencil); font-size: 17px; }
+
+  /* Hamsta+ */
+  .badge { display: inline-flex; align-items: center; justify-content: center; font: 800 .45em/1.4 var(--body); color: #fff; background: var(--plus);
+    border-radius: 7px; padding: .08em .38em; margin-left: .3em; vertical-align: .4em; letter-spacing: 0; }
+  .perks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 64px; }
+  .perks li { padding-left: 26px; position: relative; }
+  .perks li::before { content: ""; position: absolute; left: 0; top: .5em; width: 12px; height: 12px; border-radius: 4px; background: var(--plus); }
+  .perks b { display: block; }
+  .perks span { color: var(--pencil); font-size: 17px; }
+  .note { color: var(--pencil); font-size: 15px; margin: 28px 0 0; }
+
+  /* HamstaTV */
+  .tv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 64px; }
+  .tv p { margin: 0 0 14px; color: var(--pencil); }
+  .tv b { color: var(--ink); }
+
+  /* How to join: a real sequence, so it's numbered. */
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; counter-reset: step; }
+  .steps li { counter-increment: step; color: var(--pencil); }
+  .steps li::before { content: counter(step); display: block; font: 800 64px/1 var(--marker); font-variation-settings: "INFM" 60; color: var(--ink); margin-bottom: 8px; }
+  .steps b { color: var(--ink); }
+  .after { color: var(--pencil); margin: 32px 0 0; max-width: 40em; }
+
+  footer { margin-top: 96px; padding: 28px 0 44px; color: var(--pencil); font-size: 15px; }
+  footer .links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 18px 0 12px; }
+  footer p { margin: 0; }
+
+  @media (max-width: 760px) {
+    body { font-size: 17px; }
+    header nav { display: none; }
+    .hero { grid-template-columns: 1fr; padding-top: 12px; gap: 0; }
+    .hero-text { padding-bottom: 28px; }
+    .lead { font-size: 19px; }
+    .btn { font-size: 18px; padding: 15px 22px; white-space: nowrap; }
+    .btn.alt { font-size: 16px; }
+    .hamster img { max-width: 300px; }
+    .groups, .perks, .tv, .steps { grid-template-columns: 1fr; }
+    .groups { gap: 40px; }
+    .steps { gap: 24px; }
+    section { padding-top: 64px; }
+  }
 </style>
 </head>
 <body>
 <div class="wrap">
-  <header><img src="icon.png" alt="">Hamsta&trade;
+  <header>
+    <a class="brand" href="#top"><img src="icon.png" alt=""><span>Hamsta<span class="tm">&trade;</span></span></a>
     <nav><a href="#features">Features</a><a href="#plus">Hamsta+</a><a href="#hamstatv">HamstaTV</a><a href="#join">How to join</a></nav>
   </header>
 
-  <div class="hero">
-    <img src="icon.png" alt="Hamsta">
-    <h1>Hang out with your friends.</h1>
-    <p class="lead">Hamsta is voice, video, screen sharing and chat for you and your friends, with servers, DMs and group chats. No ads, no tracking.</p>
-    <a class="btn" id="download" href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/releases/latest">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
-      Download for Windows</a>
-    <div><a class="btn alt" href="https://app.hamsta.tv:8443/">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
-      Use in browser</a></div>
-    <div class="small">Windows 10 and 11: one portable app that updates itself. Or use it in your browser, with nothing to install.</div>
-  </div>
-
-  <section id="features">
-    <h2>Everything your group needs</h2>
-    <p>All of this is free.</p>
-    <div class="grid four">
-      <div class="card"><h3>Crystal-clear voice</h3><p>Voice channels and calls with AI noise suppression, push-to-talk that works in any game, and a volume slider for each person.</p></div>
-      <div class="card"><h3>Screen share that keeps up</h3><p>Share a game or your whole screen with sound, smooth at 720p 60 fps.</p></div>
-      <div class="card"><h3>Webcams</h3><p>Turn your camera on in any call. Sharing your screen too? Your camera sits in the corner.</p></div>
-      <div class="card"><h3>Servers</h3><p>Make a server for your group with text and voice channels, and invite friends with a right-click. You choose which servers are allowed to ring you.</p></div>
-      <div class="card"><h3>DMs and group chats</h3><p>Message friends, make group chats with their own name and photo, and call them with one button.</p></div>
-      <div class="card"><h3>Files, links and videos</h3><p>Send files up to 300 MB (files over 30 MB are kept for 48 hours). Links show previews, and YouTube videos play right in the app.</p></div>
-      <div class="card"><h3>Hop on someone's wheel</h3><p>Ask to take control of a friend's mouse and keyboard while they share, only if they say yes.</p></div>
-      <div class="card"><h3>You're in control</h3><p>Block and report people, download a copy of your data, or delete your account whenever you want.</p></div>
+  <main id="top">
+    <div class="hero">
+      <div class="hero-text">
+        <h1>Hang out with your friends.</h1>
+        <p class="lead">Voice, video, screen sharing and chat, with servers, DMs and group chats. No ads, no tracking.</p>
+        <div class="ctas">
+          <a class="btn main" id="download" href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/releases/latest">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
+            Download for Windows</a>
+          <a class="btn alt" href="https://app.hamsta.tv:8443/">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
+            Use in browser</a>
+        </div>
+        <p class="fine">Windows 10 and 11: one portable app that updates itself. Or use it in your browser, with nothing to install.</p>
+      </div>
+      <div class="hamster"><img src="hamsta.png" width="714" height="705" alt="Hamsta, a hand-drawn hamster in a rainbow propeller hat, holding a cookie"></div>
     </div>
-  </section>
+    <svg class="floor" viewBox="0 0 1000 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 10 C 110 6, 210 13, 330 9 S 560 5, 690 10 S 880 14, 997 8"/></svg>
 
-  <section id="plus" class="plus">
-    <h2>Hamsta+<span class="plus-badge">H+</span></h2>
-    <p>Optional extras on top of everything above. You never need Hamsta+ to use Hamsta.</p>
-    <div class="grid">
-      <div class="card"><h3>Make your profile yours</h3><p>Animated profile photo and banner, two-color gradient names, a profile theme, avatar decorations and an About me.</p></div>
-      <div class="card"><h3>Better calls</h3><p>Screen share in 1080p, 1440p or source quality, studio voice up to 256 kbps, and voice effects: Hamster, Deep and Robot.</p></div>
-      <div class="card"><h3>Your own emoji and stickers</h3><p>Upload them once and use them in any chat or server.</p></div>
-      <div class="card"><h3>Boost a server</h3><p>Give a server an animated icon, a banner and better voice in its calls.</p></div>
-      <div class="card"><h3>Bigger everything</h3><p>Uploads up to 2 GB and kept longer, messages up to 8,000 characters, group chats up to 25 people and no member limit on your servers.</p></div>
-      <div class="card"><h3>Longer, sharper clips</h3><p>HamstaTV clips up to 5 minutes at up to 4K 240 fps, 15 GB of clip storage and up to 4 clips on your profile.</p></div>
-    </div>
-    <div class="note">Hamsta+ isn't for sale yet. For now it's given out by the creator.</div>
-  </section>
+    <section id="features">
+      <h2>Everything your group needs</h2>
+      <p class="intro">All of this is free.</p>
+      <div class="groups">
+        <div class="talk">
+          <h3>Talk</h3>
+          <ul class="items">
+            <li><b>Crystal-clear voice</b><span>Voice channels and calls with AI noise suppression, push-to-talk that works in any game, and a volume slider for each person.</span></li>
+            <li><b>Screen share that keeps up</b><span>Share a game or your whole screen with sound, smooth at 720p 60 fps.</span></li>
+            <li><b>Webcams</b><span>Turn your camera on in any call. Sharing your screen too? Your camera sits in the corner.</span></li>
+          </ul>
+        </div>
+        <div class="chat">
+          <h3>Chat</h3>
+          <ul class="items">
+            <li><b>Servers</b><span>Make a server for your group with text and voice channels, and invite friends with a right-click. You choose which servers are allowed to ring you.</span></li>
+            <li><b>DMs and group chats</b><span>Message friends, make group chats with their own name and photo, and call them with one button.</span></li>
+            <li><b>Files, links and videos</b><span>Send files up to 300 MB (files over 30 MB are kept for 48 hours). Links show previews, and YouTube videos play right in the app.</span></li>
+          </ul>
+        </div>
+        <div class="play">
+          <h3>Play</h3>
+          <ul class="items">
+            <li><b>Hop on someone's wheel</b><span>Ask to take control of a friend's mouse and keyboard while they share, only if they say yes.</span></li>
+            <li><b>Clips with HamstaTV</b><span>Save the moment with one key, then send it in any chat or put it on your profile.</span></li>
+          </ul>
+        </div>
+        <div class="yours">
+          <h3>You're in control</h3>
+          <ul class="items">
+            <li><b>Block and report</b><span>Stop anyone from messaging you, and report people who break the rules.</span></li>
+            <li><b>Your data</b><span>Download a copy of your data, or delete your account whenever you want.</span></li>
+            <li><b>Signed updates</b><span>Every update is signed by the developer, and Hamsta checks the signature before installing anything.</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
 
-  <section id="hamstatv">
-    <h2>HamstaTV&trade;</h2>
-    <p>Clip saving and trimming for your games, made to go with Hamsta.</p>
-    <div class="tv"><div class="badge">Hamsta<span>TV</span></div>
-      <div>
+    <section id="plus">
+      <h2>Hamsta+<span class="badge">H+</span></h2>
+      <p class="intro">Optional extras on top of everything above. You never need Hamsta+ to use Hamsta.</p>
+      <ul class="perks">
+        <li><b>Make your profile yours</b><span>Animated profile photo and banner, two-color gradient names, a profile theme, avatar decorations and an About me.</span></li>
+        <li><b>Better calls</b><span>Screen share in 1080p, 1440p or source quality, studio voice up to 256 kbps, and voice effects: Hamster, Deep and Robot.</span></li>
+        <li><b>Your own emoji and stickers</b><span>Upload them once and use them in any chat or server.</span></li>
+        <li><b>Boost a server</b><span>Give a server an animated icon, a banner and better voice in its calls.</span></li>
+        <li><b>Bigger everything</b><span>Uploads up to 2 GB and kept longer, messages up to 8,000 characters, group chats up to 25 people and no member limit on your servers.</span></li>
+        <li><b>Longer, sharper clips</b><span>HamstaTV clips up to 5 minutes at up to 4K 240 fps, 15 GB of clip storage and up to 4 clips on your profile.</span></li>
+      </ul>
+      <p class="note">Hamsta+ isn't for sale yet. For now it's given out by the creator.</p>
+    </section>
+
+    <section id="hamstatv">
+      <h2>HamstaTV<span class="tm">&trade;</span></h2>
+      <p class="intro">Clip saving and trimming for your games, made to go with Hamsta.</p>
+      <div class="tv">
         <p>Press your save key and HamstaTV keeps just the moment you want. Trim it, then send it in any chat with the <b>+</b> button, or put it on your profile for friends to watch.</p>
         <p>Free clips are up to 2 minutes at 720p 60 fps, with 2 GB of clip storage and 1 clip on your profile. Turn it on in Hamsta under <b>Settings, Hamsta Clipper</b>, and Hamsta installs it and keeps it updated for you.</p>
-      </div></div>
-  </section>
+      </div>
+    </section>
 
-  <section id="join">
-    <h2>How to join</h2>
-    <ol>
-      <li>Download Hamsta and open it, or click <b>Use in browser</b>.</li>
-      <li>Paste the one-time join link a friend sent you, and pick a username.</li>
-      <li>Save your login code somewhere safe: it's how you sign in again, on any PC or browser.</li>
-    </ol>
-    <p>Every update is signed by the developer, and Hamsta checks the signature before installing anything. For push-to-talk in games and the best screen share, use the desktop app.</p>
-  </section>
+    <section id="join">
+      <h2>How to join</h2>
+      <ol class="steps">
+        <li><b>Get Hamsta.</b> Download it and open it, or click Use in browser.</li>
+        <li><b>Paste your join link.</b> Use the one-time link a friend sent you, and pick a username.</li>
+        <li><b>Save your login code.</b> Keep it somewhere safe: it's how you sign in again, on any PC or browser.</li>
+      </ol>
+      <p class="after">For push-to-talk in games and the best screen share, use the desktop app.</p>
+    </section>
+  </main>
 
   <footer>
+    <svg class="floor" viewBox="0 0 1000 18" preserveAspectRatio="none" aria-hidden="true"><path d="M3 8 C 140 12, 260 6, 400 10 S 640 13, 760 8 S 900 6, 997 11"/></svg>
     <div class="links">
       <a href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/blob/main/TERMS.md">Terms of Use</a>
       <a href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/blob/main/PRIVACY.md">Privacy Policy</a>
@@ -132,8 +231,8 @@
       <a href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/releases">All releases</a>
       <a href="mailto:support@hamsta.tv">support@hamsta.tv</a>
     </div>
-    <div>You must be 13 or older, or older if the law where you live requires it.</div>
-    <div>Hamsta&trade; and HamstaTV&trade; are trademarks of Samuel M Pettyjohn.</div>
+    <p>You must be 13 or older, or older if the law where you live requires it.</p>
+    <p>Hamsta&trade; and HamstaTV&trade; are trademarks of Samuel M Pettyjohn.</p>
   </footer>
 </div>
 <script>
