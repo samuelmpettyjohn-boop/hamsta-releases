@@ -32,90 +32,94 @@
   }
   * { box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-  body { margin: 0; background: var(--paper); color: var(--ink); font: 18px/1.6 var(--body); -webkit-font-smoothing: antialiased; }
+  body { margin: 0; background: var(--paper); color: var(--ink); font: clamp(18px, 13px + .4vw, 23px)/1.6 var(--body); -webkit-font-smoothing: antialiased; }
   a { color: inherit; text-underline-offset: 3px; }
   a:focus-visible, .btn:focus-visible { outline: 3px solid var(--blue); outline-offset: 3px; border-radius: 6px; }
-  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 24px; }
+  .wrap { max-width: 2400px; margin: 0 auto; padding: 0 clamp(24px, 4vw, 96px); }
   h1, h2, h3, .brand, .btn { font-family: var(--marker); font-variation-settings: "INFM" 60; }
   .tm { font: 600 .42em/1 var(--body); vertical-align: .9em; margin-left: .05em; }
 
   header { display: flex; align-items: center; gap: 12px; padding: 22px 0; }
-  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 24px; text-decoration: none; }
-  .brand img { width: 44px; height: 44px; }
-  header nav { margin-left: auto; display: flex; gap: 26px; font-size: 16px; }
+  .brand { display: flex; align-items: center; gap: 10px; font-weight: 700; font-size: 1.33em; text-decoration: none; }
+  .brand img { width: 1.8em; height: 1.8em; }
+  header nav { margin-left: auto; display: flex; gap: 1.6em; font-size: .9em; }
   header nav a { color: var(--pencil); text-decoration: none; }
   header nav a:hover { color: var(--ink); text-decoration: underline; }
 
   /* Hero: the hamster sits on a hand-drawn floor line. */
   .hero { display: grid; grid-template-columns: 1.1fr .9fr; align-items: end; gap: 24px; padding-top: 40px; }
-  .hero-text { padding-bottom: 72px; }
-  h1 { font-size: clamp(48px, 7.4vw, 92px); line-height: .98; font-weight: 800; margin: 0 0 24px; letter-spacing: -.01em; }
-  .lead { font-size: 21px; color: var(--pencil); max-width: 30em; margin: 0 0 32px; }
+  .hero-text { padding-bottom: 4em; }
+  h1 { font-size: clamp(48px, 6.8vw, 168px); line-height: .98; font-weight: 800; margin: 0 0 24px; letter-spacing: -.01em; }
+  .lead { font-size: 1.17em; color: var(--pencil); max-width: 30em; margin: 0 0 32px; }
   .ctas { display: flex; flex-direction: column; align-items: flex-start; gap: 12px; }
-  .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 20px; line-height: 1;
-    padding: 17px 28px; border: 3px solid var(--ink); border-radius: 22px 9px 19px 11px / 11px 19px 9px 22px; }
-  .btn svg { width: 22px; height: 22px; flex: none; }
+  .btn { display: inline-flex; align-items: center; gap: 10px; text-decoration: none; font-weight: 700; font-size: 1.11em; line-height: 1;
+    padding: .85em 1.4em; border: 3px solid var(--ink); border-radius: 22px 9px 19px 11px / 11px 19px 9px 22px; }
+  .btn svg { width: 1.1em; height: 1.1em; flex: none; }
   .btn.main { background: var(--ink); color: var(--paper); }
   .btn.main:hover { background: #2b2b2b; }
-  .btn.alt { background: var(--paper); color: var(--ink); font-size: 17px; padding: 12px 22px; }
+  .btn.alt { background: var(--paper); color: var(--ink); font-size: .95em; padding: .7em 1.3em; }
   .btn.alt:hover { background: #f2f2f2; }
-  .fine { font-size: 15px; color: var(--pencil); margin: 16px 0 0; }
+  .fine { font-size: .84em; color: var(--pencil); margin: 16px 0 0; }
   .hamster { display: flex; justify-content: center; }
-  .hamster img { display: block; width: 100%; max-width: 480px; height: auto; margin-bottom: -4px; transform-origin: 50% 100%; animation: boil .9s steps(1) infinite; }
+  .hamster img { display: block; width: 100%; max-width: min(100%, 714px); height: auto; /* its real size: bigger gets blurry */ margin-bottom: -4px; transform-origin: 50% 100%; animation: boil .9s steps(1) infinite; }
   /* "line boil": the tiny jitter of hand-drawn animation */
   @keyframes boil { 0% { transform: none; } 33% { transform: rotate(-.5deg) translateX(1px); } 66% { transform: rotate(.4deg) translate(-1px, 1px); } }
   @media (prefers-reduced-motion: reduce) { .hamster img { animation: none; } html { scroll-behavior: auto; } }
   .floor { display: block; width: 100%; height: 18px; }
   .floor path { fill: none; stroke: var(--ink); stroke-width: 3; stroke-linecap: round; vector-effect: non-scaling-stroke; }
 
-  section { padding: 84px 0 0; }
-  h2 { font-size: clamp(34px, 4.6vw, 48px); line-height: 1.05; font-weight: 800; margin: 0 0 10px; }
-  .intro { color: var(--pencil); margin: 0 0 40px; max-width: 34em; }
+  section { padding: clamp(64px, 6vw, 150px) 0 0; }
+  h2 { font-size: clamp(34px, 3.6vw, 88px); line-height: 1.05; font-weight: 800; margin: 0 0 10px; }
+  .intro { color: var(--pencil); margin: 0 0 2.2em; max-width: 34em; }
 
   /* Features in four groups, each marked with a beanie color. */
-  .groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 48px 64px; }
-  h3 { position: relative; display: inline-block; font-size: 30px; font-weight: 700; margin: 0 0 14px; padding: 0 4px; z-index: 0; }
+  .groups { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 2.7em clamp(40px, 4vw, 96px); }
+  h3 { position: relative; display: inline-block; font-size: 1.67em; font-weight: 700; margin: 0 0 14px; padding: 0 4px; z-index: 0; }
   h3::before { content: ""; position: absolute; inset: 48% -6px 2% -4px; z-index: -1; background: var(--hl); opacity: .55;
     border-radius: 4px 14px 6px 16px / 9px 4px 11px 6px; transform: rotate(-1.4deg); }
   .talk { --hl: var(--blue); } .chat { --hl: var(--pink); } .play { --hl: var(--orange); } .yours { --hl: var(--yellow); }
   .items { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
-  .items b { display: block; font-size: 18px; }
-  .items span { color: var(--pencil); font-size: 17px; }
+  .items b { display: block; }
+  .items span { color: var(--pencil); font-size: .95em; }
 
   /* Hamsta+ */
   .badge { display: inline-flex; align-items: center; justify-content: center; font: 800 .45em/1.4 var(--body); color: #fff; background: var(--plus);
     border-radius: 7px; padding: .08em .38em; margin-left: .3em; vertical-align: .4em; letter-spacing: 0; }
-  .perks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 22px 64px; }
-  .perks li { padding-left: 26px; position: relative; }
-  .perks li::before { content: ""; position: absolute; left: 0; top: .5em; width: 12px; height: 12px; border-radius: 4px; background: var(--plus); }
+  .perks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.3em clamp(40px, 4vw, 96px); }
+  .perks li { padding-left: 1.45em; position: relative; }
+  .perks li::before { content: ""; position: absolute; left: 0; top: .5em; width: .67em; height: .67em; border-radius: .22em; background: var(--plus); }
   .perks b { display: block; }
-  .perks span { color: var(--pencil); font-size: 17px; }
-  .note { color: var(--pencil); font-size: 15px; margin: 28px 0 0; }
+  .perks span { color: var(--pencil); font-size: .95em; }
+  .note { color: var(--pencil); font-size: .84em; margin: 1.8em 0 0; }
 
   /* HamstaTV */
-  .tv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 64px; }
-  .tv p { margin: 0 0 14px; color: var(--pencil); }
+  .tv { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 0 clamp(40px, 4vw, 96px); }
+  .tv p { margin: 0 0 .8em; color: var(--pencil); max-width: 36em; }
   .tv b { color: var(--ink); }
 
   /* How to join: a real sequence, so it's numbered. */
-  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 36px; counter-reset: step; }
-  .steps li { counter-increment: step; color: var(--pencil); }
-  .steps li::before { content: counter(step); display: block; font: 800 64px/1 var(--marker); font-variation-settings: "INFM" 60; color: var(--ink); margin-bottom: 8px; }
+  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(28px, 3vw, 72px); counter-reset: step; }
+  .steps li { counter-increment: step; color: var(--pencil); max-width: 26em; }
+  .steps li::before { content: counter(step); display: block; font: 800 3.5em/1 var(--marker); font-variation-settings: "INFM" 60; color: var(--ink); margin-bottom: 8px; }
   .steps b { color: var(--ink); }
   .after { color: var(--pencil); margin: 32px 0 0; max-width: 40em; }
 
-  footer { margin-top: 96px; padding: 28px 0 44px; color: var(--pencil); font-size: 15px; }
+  footer { margin-top: clamp(80px, 7vw, 160px); padding: 28px 0 44px; color: var(--pencil); font-size: .84em; }
   footer .links { display: flex; flex-wrap: wrap; gap: 8px 22px; margin: 18px 0 12px; }
   footer p { margin: 0; }
 
+  @media (min-width: 1500px) {
+    .groups { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+    .perks { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  }
   @media (max-width: 760px) {
     body { font-size: 17px; }
+    .wrap { padding: 0 20px; }
     header nav { display: none; }
     .hero { grid-template-columns: 1fr; padding-top: 12px; gap: 0; }
     .hero-text { padding-bottom: 28px; }
-    .lead { font-size: 19px; }
-    .btn { font-size: 18px; padding: 15px 22px; white-space: nowrap; }
-    .btn.alt { font-size: 16px; }
+    .lead { font-size: 1.12em; }
+    .btn { white-space: nowrap; }
     .hamster img { max-width: 300px; }
     .groups, .perks, .tv, .steps { grid-template-columns: 1fr; }
     .groups { gap: 40px; }
