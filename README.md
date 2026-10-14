@@ -2,9 +2,9 @@
 
 Downloads for **Hamsta™** (private voice, video and chat for you and your friends) and **HamstaTV™** (clip saving, installed from inside Hamsta; formerly HampterTV).
 
-Grab the newest `Hamsta-x.y.z.exe` from [Releases](../../releases). It's a single portable app; your server's host gives you a join link to sign up.
+Grab the newest `Hamsta.exe` from [Releases](../../releases). It's a single portable app.
 
-Every release comes with a `latest.json` that includes a signature. Hamsta checks that signature against the developer's key before it installs any update or HamstaTV, so a download that was tampered with won't run.
+Every release comes with a `latest.json` that includes a signature. Hamsta checks that signature against the developer's key before it installs any update or HamstaTV, so an untrusted download that was tampered with won't work.
 
 ## Before you use Hamsta
 
