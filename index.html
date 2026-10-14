@@ -57,7 +57,7 @@
     <img src="icon.png" alt="Hamsta">
     <h1>Hang out with your friends.<br>On your own server.</h1>
     <p class="lead">Hamsta is voice, video, screen sharing and chat for you and your friends. Your group's host runs the server, so your chats live there, not in some company's cloud. No ads, no tracking.</p>
-    <a class="btn" href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/releases/latest">
+    <a class="btn" id="download" href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/releases/latest">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
       Download for Windows</a>
     <div class="small">Windows 10 and 11. One portable app, and it updates itself.</div>
@@ -103,5 +103,17 @@
     <div>Hamsta&trade; and HamstaTV&trade; are trademarks of Samuel M Pettyjohn.</div>
   </footer>
 </div>
+<script>
+// Download starts the file right away: point the button at the newest Hamsta .exe. HamstaTV releases
+// share this repo, so pick by tag. If GitHub can't be reached, it still opens the releases page.
+fetch('https://api.github.com/repos/samuelmpettyjohn-boop/hamsta-releases/releases?per_page=20')
+  .then((r) => r.json())
+  .then((list) => {
+    const rel = list.find((r) => /^hamsta-v/.test(r.tag_name) && !r.draft && !r.prerelease);
+    const exe = rel && rel.assets.find((a) => /\.exe$/i.test(a.name));
+    if (exe) document.getElementById('download').href = exe.browser_download_url;
+  })
+  .catch(() => {});
+</script>
 </body>
 </html>
