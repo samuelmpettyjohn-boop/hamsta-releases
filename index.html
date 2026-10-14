@@ -4,16 +4,17 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Hamsta™: voice, video and chat for you and your friends</title>
-<meta name="description" content="Hamsta is a private voice, video, screen share and chat app for you and your friends, on a server you run yourself.">
+<meta name="description" content="Hamsta is a private voice, video, screen share and chat app for you and your friends, with servers, DMs and group chats, on a server your group runs itself.">
 <meta property="og:title" content="Hamsta™">
-<meta property="og:description" content="Private voice, video, screen share and chat for you and your friends, on a server you run yourself.">
+<meta property="og:description" content="Private voice, video, screen share and chat for you and your friends, with servers, DMs and group chats. On the desktop or in your browser.">
 <meta property="og:image" content="https://hamsta.tv/icon.png">
 <meta name="theme-color" content="#7b6cf6">
 <link rel="icon" href="icon.png">
 <style>
-  :root { --bg0: #0e0f11; --bg1: #16171a; --bg2: #1d1e22; --line: #2a2b31; --text: #e8e9ec; --text2: #b5b7bd; --muted: #8a8d96; --accent: #7b6cf6; --accent2: #9587ff; }
+  :root { --bg0: #0e0f11; --bg1: #16171a; --bg2: #1d1e22; --line: #2a2b31; --text: #e8e9ec; --text2: #b5b7bd; --muted: #8a8d96; --accent: #7b6cf6; --accent2: #9587ff; --gold: #f0b232; }
   * { box-sizing: border-box; }
   html, body { margin: 0; background: var(--bg0); color: var(--text); font: 16px/1.55 "Segoe UI", system-ui, -apple-system, sans-serif; }
+  html { scroll-behavior: smooth; }
   a { color: var(--accent2); }
   .wrap { max-width: 980px; margin: 0 auto; padding: 0 20px; }
   header { display: flex; align-items: center; gap: 10px; padding: 22px 0; font-weight: 700; font-size: 20px; }
@@ -24,23 +25,29 @@
   .hero { text-align: center; padding: 56px 0 40px; }
   .hero img { width: 112px; height: 112px; filter: drop-shadow(0 10px 30px #7b6cf655); }
   h1 { font-size: clamp(34px, 6vw, 56px); line-height: 1.1; margin: 18px 0 14px; letter-spacing: -0.02em; }
-  .lead { font-size: clamp(17px, 2.4vw, 20px); color: var(--text2); max-width: 640px; margin: 0 auto 30px; }
+  .lead { font-size: clamp(17px, 2.4vw, 20px); color: var(--text2); max-width: 660px; margin: 0 auto 30px; }
   .btn { display: inline-flex; align-items: center; gap: 10px; background: var(--accent); color: #fff; text-decoration: none; font-weight: 700; padding: 14px 26px; border-radius: 999px; font-size: 17px; }
   .btn:hover { background: var(--accent2); }
   .btn svg { width: 20px; height: 20px; }
   .btn.alt { background: none; color: var(--text); border: 1px solid var(--line); padding: 10px 22px; font-size: 15px; margin-top: 12px; }
   .btn.alt:hover { background: var(--bg2); }
   .small { font-size: 14px; color: var(--muted); margin-top: 12px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; padding: 30px 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 14px; padding: 18px 0 0; }
+  .grid.four { grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); }
   .card { background: var(--bg1); border: 1px solid var(--line); border-radius: 14px; padding: 20px 22px; }
   .card h3 { margin: 0 0 6px; font-size: 17px; }
   .card p { margin: 0; color: var(--text2); font-size: 15px; }
-  section h2 { font-size: 26px; margin: 40px 0 6px; }
-  section > p { color: var(--text2); margin: 0 0 8px; }
+  section h2 { font-size: 26px; margin: 56px 0 6px; }
+  section > p { color: var(--text2); margin: 0 0 8px; max-width: 720px; }
   ol { color: var(--text2); padding-left: 22px; }
   ol li { margin-bottom: 6px; }
+  .plus-badge { display: inline-block; font-size: 13px; font-weight: 800; color: #1b1405; background: var(--gold); border-radius: 6px; padding: 1px 7px; margin-left: 6px; vertical-align: 4px; }
+  .plus .card { border-color: #f0b23233; }
+  .note { color: var(--muted); font-size: 14px; margin-top: 14px; }
   .tv { display: flex; gap: 22px; align-items: center; background: var(--bg1); border: 1px solid var(--line); border-radius: 14px; padding: 24px; margin-top: 14px; }
   .tv b { color: var(--text); }
+  .tv p { margin: 0 0 8px; color: var(--text2); }
+  .tv p:last-child { margin-bottom: 0; }
   .tv .badge { flex: none; font-weight: 800; font-size: 22px; background: var(--bg2); border-radius: 12px; padding: 14px 16px; }
   .tv .badge span { color: var(--accent2); }
   footer { border-top: 1px solid var(--line); margin-top: 60px; padding: 26px 0 40px; color: var(--muted); font-size: 14px; }
@@ -52,48 +59,69 @@
 <body>
 <div class="wrap">
   <header><img src="icon.png" alt="">Hamsta&trade;
-    <nav><a href="#features">Features</a><a href="#hamstatv">HamstaTV</a><a href="#join">How to join</a></nav>
+    <nav><a href="#features">Features</a><a href="#plus">Hamsta+</a><a href="#hamstatv">HamstaTV</a><a href="#join">How to join</a></nav>
   </header>
 
   <div class="hero">
     <img src="icon.png" alt="Hamsta">
     <h1>Hang out with your friends.<br>On your own server.</h1>
-    <p class="lead">Hamsta is voice, video, screen sharing and chat for you and your friends. Your group's host runs the server, so your chats live there, not in some company's cloud. No ads, no tracking.</p>
+    <p class="lead">Hamsta is voice, video, screen sharing and chat for you and your friends, with servers, DMs and group chats. Your group's host runs the server, so your chats live there, not in some company's cloud. No ads, no tracking.</p>
     <a class="btn" id="download" href="https://github.com/samuelmpettyjohn-boop/hamsta-releases/releases/latest">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4M7 10l5 5 5-5M12 15V3"/></svg>
       Download for Windows</a>
     <div><a class="btn alt" href="https://app.hamsta.tv:8443/">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>
       Use in browser</a></div>
-    <div class="small">Windows 10 and 11. One portable app, and it updates itself.</div>
+    <div class="small">Windows 10 and 11: one portable app that updates itself. Or use it in your browser, with nothing to install.</div>
   </div>
 
   <section id="features">
-    <div class="grid">
-      <div class="card"><h3>Crystal-clear voice</h3><p>Voice channels and calls with AI noise suppression, push-to-talk that works in any game, and per-person volume.</p></div>
-      <div class="card"><h3>Screen share that keeps up</h3><p>Share a game or your whole screen with sound, smooth at 60 fps. Hamsta+ goes up to 1440p and source quality.</p></div>
+    <h2>Everything your group needs</h2>
+    <p>All of this is free.</p>
+    <div class="grid four">
+      <div class="card"><h3>Crystal-clear voice</h3><p>Voice channels and calls with AI noise suppression, push-to-talk that works in any game, and a volume slider for each person.</p></div>
+      <div class="card"><h3>Screen share that keeps up</h3><p>Share a game or your whole screen with sound, smooth at 720p 60 fps.</p></div>
       <div class="card"><h3>Webcams</h3><p>Turn your camera on in any call. Sharing your screen too? Your camera sits in the corner.</p></div>
+      <div class="card"><h3>Servers</h3><p>Make a server for your group with text and voice channels, and invite friends with a right-click. You choose which servers are allowed to ring you.</p></div>
       <div class="card"><h3>DMs and group chats</h3><p>Message friends, make group chats with their own name and photo, and call them with one button.</p></div>
-      <div class="card"><h3>Files, links and videos</h3><p>Send big files, and links show previews. YouTube videos play right in the chat.</p></div>
+      <div class="card"><h3>Files, links and videos</h3><p>Send files up to 300 MB (files over 30 MB are kept for 48 hours). Links show previews, and YouTube videos play right in the app.</p></div>
       <div class="card"><h3>Hop on someone's wheel</h3><p>Ask to take control of a friend's mouse and keyboard while they share, only if they say yes.</p></div>
+      <div class="card"><h3>You're in control</h3><p>Block and report people, download a copy of your data, or delete your account whenever you want.</p></div>
     </div>
+  </section>
+
+  <section id="plus" class="plus">
+    <h2>Hamsta+<span class="plus-badge">H+</span></h2>
+    <p>Optional extras on top of everything above. You never need Hamsta+ to use Hamsta.</p>
+    <div class="grid">
+      <div class="card"><h3>Make your profile yours</h3><p>Animated profile photo and banner, two-color gradient names, a profile theme, avatar decorations and an About me.</p></div>
+      <div class="card"><h3>Better calls</h3><p>Screen share in 1080p, 1440p or source quality, studio voice up to 256 kbps, and voice effects: Hamster, Deep and Robot.</p></div>
+      <div class="card"><h3>Your own emoji and stickers</h3><p>Upload them once and use them in any chat or server.</p></div>
+      <div class="card"><h3>Boost a server</h3><p>Give a server an animated icon, a banner and better voice in its calls.</p></div>
+      <div class="card"><h3>Bigger everything</h3><p>Uploads up to 2 GB and kept longer, messages up to 8,000 characters, group chats up to 25 people and no member limit on your servers.</p></div>
+      <div class="card"><h3>Longer, sharper clips</h3><p>HamstaTV clips up to 5 minutes at up to 4K 240 fps, 15 GB of clip storage and up to 4 clips on your profile.</p></div>
+    </div>
+    <div class="note">Hamsta+ isn't for sale yet. For now it's given out by the creator.</div>
   </section>
 
   <section id="hamstatv">
     <h2>HamstaTV&trade;</h2>
     <p>Clip saving and trimming for your games, made to go with Hamsta.</p>
     <div class="tv"><div class="badge">Hamsta<span>TV</span></div>
-      <div>Press your save key and HamstaTV keeps just the moment you want. Turn it on in Hamsta under <b>Settings, Hamsta Clipper</b>, and Hamsta installs it and keeps it updated for you.</div></div>
+      <div>
+        <p>Press your save key and HamstaTV keeps just the moment you want. Trim it, then send it in any chat with the <b>+</b> button, or put it on your profile for friends to watch.</p>
+        <p>Free clips are up to 2 minutes at 720p 60 fps, with 2 GB of clip storage and 1 clip on your profile. Turn it on in Hamsta under <b>Settings, Hamsta Clipper</b>, and Hamsta installs it and keeps it updated for you.</p>
+      </div></div>
   </section>
 
   <section id="join">
     <h2>How to join</h2>
     <ol>
-      <li>Download Hamsta and open it.</li>
+      <li>Download Hamsta and open it, or click <b>Use in browser</b>.</li>
       <li>Paste the one-time join link your server's host sent you, and pick a username.</li>
-      <li>Save your login code somewhere safe: it's how you sign in again.</li>
+      <li>Save your login code somewhere safe: it's how you sign in again, on any PC or browser.</li>
     </ol>
-    <p>Every update is signed by the developer, and Hamsta checks the signature before installing anything.</p>
+    <p>Every update is signed by the developer, and Hamsta checks the signature before installing anything. For push-to-talk in games and the best screen share, use the desktop app.</p>
   </section>
 
   <footer>
