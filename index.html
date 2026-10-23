@@ -26,7 +26,7 @@
     --pink: #ff4fa3;
     --orange: #ff8a1f;
     --yellow: #ffd60a;
-    --plus: linear-gradient(135deg, #ff7ac6, #7b6cf6); /* the app's H+ badge */
+    --plus: #ffd84d; /* the app's H+ sticker */
     --marker: "Shantell Sans", "Segoe Print", "Comic Sans MS", cursive;
     --body: "Onest", "Segoe UI", system-ui, sans-serif;
   }
@@ -83,11 +83,11 @@
   .items span { color: var(--pencil); font-size: .95em; }
 
   /* Hamsta+ */
-  .badge { display: inline-flex; align-items: center; justify-content: center; font: 800 .45em/1.4 var(--body); color: #fff; background: var(--plus);
-    border-radius: 7px; padding: .08em .38em; margin-left: .3em; vertical-align: .4em; letter-spacing: 0; }
+  .badge { display: inline-flex; align-items: center; justify-content: center; font: 800 .45em/1.4 var(--marker); color: var(--ink); background: var(--plus);
+    border: 2px solid var(--ink); box-shadow: 2px 2px 0 var(--ink); border-radius: 6px; padding: 0 .32em; margin-left: .4em; vertical-align: .4em; letter-spacing: 0; transform: rotate(-5deg); }
   .perks { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.3em clamp(40px, 4vw, 96px); }
   .perks li { padding-left: 1.45em; position: relative; }
-  .perks li::before { content: ""; position: absolute; left: 0; top: .5em; width: .67em; height: .67em; border-radius: .22em; background: var(--plus); }
+  .perks li::before { content: ""; position: absolute; left: 0; top: .5em; width: .67em; height: .67em; border-radius: .22em; background: var(--plus); border: 2px solid var(--ink); box-sizing: border-box; }
   .perks b { display: block; }
   .perks span { color: var(--pencil); font-size: .95em; }
   .note { color: var(--pencil); font-size: .84em; margin: 1.8em 0 0; }
